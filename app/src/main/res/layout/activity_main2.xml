@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.chinaso.test.MainActivity">
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="360dp"
+        android:background="#ff0000"/>
+
+
+   <!-- <com.chinaso.test.MyScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:layout_below="@id/change"
+        android:fillViewport="true">-->
+    <com.chinaso.test.MyPullToRefreshScrollView
+        xmlns:ptr="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/pull_refresh_scrollview"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        ptr:ptrAnimationStyle="flip"
+        android:fillViewport="true"
+        ptr:ptrMode="pullFromStart" >
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/container">
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/logo"
+                    android:src="@drawable/logo"/>
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/logo"
+                    android:id="@+id/change"
+                    android:text="change"/>
+                <com.chinaso.test.MyWebView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/web1"
+                    android:layout_below="@id/change"
+                    android:visibility="visible"/>
+
+                <!--<com.chinaso.test.MyPullToRefreshScrollView
+                    xmlns:ptr="http://schemas.android.com/apk/res-auto"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    ptr:ptrAnimationStyle="flip"
+                    android:fillViewport="true"
+                    android:layout_below="@+id/web1"
+                    ptr:ptrMode="disabled" >
+
+                    <com.chinaso.test.MyWebView
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:id="@+id/web2"
+
+                         android:visibility="visible"/>
+                </com.chinaso.test.MyPullToRefreshScrollView>-->
+
+                 <com.chinaso.test.MyPullToRefreshWebView
+                     xmlns:ptr="http://schemas.android.com/apk/res-auto"
+                     android:id="@+id/pull_refresh_webview"
+                     android:layout_height="match_parent"
+                     android:layout_width="wrap_content"
+                     android:layout_below="@+id/web1"
+                     ptr:ptrMode="both" /><!-- android:layout_below="@+id/web1"-->
+                <com.chinaso.test.MyWebView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/web3"
+                    android:layout_below="@+id/web1"
+                    android:visibility="visible"/>
+            </RelativeLayout>
+    </com.chinaso.test.MyPullToRefreshScrollView>
+    <!--</com.chinaso.test.MyScrollView>-->
+
+</RelativeLayout>
