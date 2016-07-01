@@ -4,34 +4,26 @@ import android.content.Context;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.MotionEvent;
-
-import com.handmark.pulltorefresh.library.PullToRefreshScrollView;
+import android.widget.RelativeLayout;
 
 /**
- * Created by Administrator on 2016/6/30 0030.
+ * Created by Administrator on 2016/7/1 0001.
  */
-public class MyPullToRefreshScrollView extends PullToRefreshScrollView {
-    private static final String TAG ="MyPTRScrollView" ;
+public class MyRelativeLayout extends RelativeLayout{
+    private static final String TAG = "MyRelativeLayout";
 
-    public MyPullToRefreshScrollView(Context context) {
-        super(context);
-    }
-
-    public MyPullToRefreshScrollView(Context context, AttributeSet attrs) {
+    public MyRelativeLayout(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
 
-    public MyPullToRefreshScrollView(Context context, Mode mode) {
-        super(context, mode);
+    public MyRelativeLayout(Context context, AttributeSet attrs, int defStyleAttr) {
+        super(context, attrs, defStyleAttr);
     }
 
-    public MyPullToRefreshScrollView(Context context, Mode mode, AnimationStyle style) {
-        super(context, mode, style);
+    public MyRelativeLayout(Context context) {
+        super(context);
     }
-    private boolean mIsDisable;
-    public void setDisable(boolean flag){
-        mIsDisable =flag;
-    }
+
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         int action = event.getAction();
@@ -49,11 +41,7 @@ public class MyPullToRefreshScrollView extends PullToRefreshScrollView {
                 Log.i(TAG, "onTouchEvent action:ACTION_CANCEL");
                 break;
         }
-        if(!mIsDisable){
-            return super.onTouchEvent(event);
-        }else{
-            return false;
-        }
+        return super.onTouchEvent(event);
     }
 
     @Override
@@ -76,11 +64,6 @@ public class MyPullToRefreshScrollView extends PullToRefreshScrollView {
                 Log.i(TAG, "onInterceptTouchEvent action:ACTION_CANCEL");
                 break;
         }
-
-        if(!mIsDisable){
-            return super.onInterceptTouchEvent(event);
-        }else{
-            return false;
-        }
+        return super.onInterceptTouchEvent(event);
     }
 }

@@ -26,7 +26,10 @@ public class WebViewUtil {
             @Override
             public void onPageFinished(final WebView view, String url) {
                 // TODO Auto-generated method stub
-                web.loadUrl("javascript:App.resize(document.body.getBoundingClientRect().height)");
+                if(url.equals("http://m.chinaso365.com/plus/plus_list.html")){
+                    web.loadUrl("javascript:App.resize(document.body.scrollHeight)");//getBoundingClientRect().height)
+                }
+
                 super.onPageFinished(view, url);
             }
 
@@ -46,11 +49,8 @@ public class WebViewUtil {
         web.getSettings().setDomStorageEnabled(true);
         web.getSettings().setCacheMode(WebSettings.LOAD_NO_CACHE);
 
-//        web.getSettings().setLayoutAlgorithm(WebSettings.LayoutAlgorithm.SINGLE_COLUMN);
 //        web.setVerticalScrollBarEnabled(false);
 //        web.setVerticalScrollbarOverlay(false);
-//        web.setHorizontalScrollBarEnabled(false);
-//        web.setHorizontalScrollbarOverlay(false);
     }
 
 }
