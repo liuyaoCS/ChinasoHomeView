@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/bg_layout"
     tools:context="com.chinaso.test.MainActivity">
     <View
         android:layout_width="match_parent"
@@ -23,7 +24,7 @@
                 android:id="@+id/container">
                 <ImageView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="200dp"
                     android:id="@+id/logo"
                     android:src="@drawable/logo"/>
 
@@ -44,18 +45,27 @@
                </com.chinaso.test.MyRelativeLayout>
        </com.chinaso.test.MyPullToRefreshScrollView>
 
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="140dp"
+        android:background="#787878"
+        android:id="@+id/input"
+        android:hint="chinaso"/>
     <Button
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="140dp"
-        android:id="@+id/change"
-        android:text="change"/>
+        android:layout_height="50dp"
+        android:layout_marginTop="63dp"
+        android:background="#212121"
+        android:id="@+id/home"
+        android:visibility="gone"
+        android:text="home"/>
 
     <Button
-        android:id="@+id/btn"
+        android:id="@+id/height"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="height"
-        android:visibility="gone"
         />
 </RelativeLayout>

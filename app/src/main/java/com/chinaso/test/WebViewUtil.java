@@ -26,7 +26,7 @@ public class WebViewUtil {
             @Override
             public void onPageFinished(final WebView view, String url) {
                 // TODO Auto-generated method stub
-                if(url.equals("http://m.chinaso365.com/plus/plus_list.html")){
+                if(url.equals("http://m.chinaso.com/")){//http://m.chinaso365.com/plus/plus_list.html
                     web.loadUrl("javascript:App.resize(document.body.scrollHeight)");//getBoundingClientRect().height)
                 }
 
